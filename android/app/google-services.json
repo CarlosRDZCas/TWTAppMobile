@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "28965677216",
+    "project_id": "twowaytransfer-c8f27",
+    "storage_bucket": "twowaytransfer-c8f27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28965677216:android:77a82a591adfd5f2d701c5",
+        "android_client_info": {
+          "package_name": "com.example.two_way_transfer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28965677216-85evtke47ts2datanttvvguinra1145q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm_LtlTzpA2ejUH_1Tr-P3jyg-OYQIv7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28965677216-85evtke47ts2datanttvvguinra1145q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
