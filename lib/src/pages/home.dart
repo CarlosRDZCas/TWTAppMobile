@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AdvancedAppBar(
         datos: datos[0],
+        acciones: null,
       ),
       drawer: MainDrawer(
         datos: datos,

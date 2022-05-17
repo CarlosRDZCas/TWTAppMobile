@@ -43,6 +43,10 @@ class MainDrawer extends StatelessWidget {
               onClicked: () => selectedItem(context, 2),
             ),
             drawerItem(
+                text: "Permisionarios",
+                icon: Icons.commute,
+                onClicked: () => selectedItem(context, 4)),
+            drawerItem(
               text: "Cerrar Sesion",
               icon: Icons.exit_to_app,
               onClicked: () => selectedItem(context, 3),
@@ -82,8 +86,12 @@ class MainDrawer extends StatelessWidget {
             arguments: ScreenArguments(datos[0], datos[1]));
         break;
       case 3:
-        Navigator.pushNamedAndRemoveUntil(context, "/", (route) => route == null);
+        Navigator.pushNamedAndRemoveUntil(
+            context, "/", (route) => route == null);
         break;
+      case 4:
+        Navigator.pushReplacementNamed(context, 'permisionarios',
+            arguments: ScreenArguments(datos[0], datos[1]));
     }
   }
 }

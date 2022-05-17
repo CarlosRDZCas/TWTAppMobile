@@ -5,6 +5,7 @@ import 'package:two_way_transfer/src/pages/enviar_carta_porte.dart';
 import 'package:two_way_transfer/src/pages/login_page.dart';
 import 'package:two_way_transfer/src/pages/mis_cartas_porte.dart';
 import 'package:two_way_transfer/src/pages/pdfview.dart';
+import 'package:two_way_transfer/src/pages/permisionarios.dart';
 
 getRoutes() {
   return (RouteSettings settings) {
@@ -21,6 +22,9 @@ getRoutes() {
       case 'pdfview':
         return CupertinoPageRoute(
             builder: (_) => PDFViewPage(), settings: settings);
+      case 'permisionarios':
+        return CupertinoPageRoute(
+            builder: (_) => PermisionariosPage(), settings: settings);
     }
   };
 }

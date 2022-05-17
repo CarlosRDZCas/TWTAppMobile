@@ -26,13 +26,13 @@ class _EnviarCartaPorteState extends State<EnviarCartaPorte> {
   final picker = ImagePicker();
   bool _loading = false;
   String? nombreimg;
+  File? imagePath;
   String? textDescripcion;
 
   var location = new Location();
   LocationData? currentLocation;
   bool isButtonClickable = true;
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  File? imagePath;
   pw.Document pdf = pw.Document();
   List<String> datos = <String>[];
 
@@ -44,6 +44,7 @@ class _EnviarCartaPorteState extends State<EnviarCartaPorte> {
     return Scaffold(
       appBar: AdvancedAppBar(
         datos: datos[0],
+        acciones: null,
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.photo_camera),
@@ -123,6 +124,7 @@ class _EnviarCartaPorteState extends State<EnviarCartaPorte> {
                   ),
                   onPressed: () {
                     if (isButtonClickable) getLocation();
+                    
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
