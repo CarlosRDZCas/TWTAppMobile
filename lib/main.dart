@@ -1,26 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:provider/provider.dart';
+import 'package:two_way_transfer/src/prividers/providers.dart';
 import 'package:two_way_transfer/src/routes/routes.dart';
 
 FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized(); 
-  await Firebase.initializeApp().then((value) => runApp(MyApp()));
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Two Way Transfer',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CartaPorteProvider()),
+        ChangeNotifierProvider(create: (_) => LoginProvider()),
+        ChangeNotifierProvider(create: (_) => LogLoggedProvider())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Two Way Transfer',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+        ),
+        initialRoute: '/',
+        onGenerateRoute: getRoutes(),
       ),
-      initialRoute: '/',
-      onGenerateRoute: getRoutes(),
     );
   }
 }

@@ -9,8 +9,8 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:two_way_transfer/src/components/appbar.dart';
-import 'package:two_way_transfer/src/components/drawer.dart';
+import 'package:two_way_transfer/src/widgets/appbar.dart';
+import 'package:two_way_transfer/src/widgets/drawer.dart';
 import '../../args/page_args.dart';
 import '../models/logmodel.dart';
 
@@ -48,7 +48,7 @@ class _PermisionariosPageState extends State<PermisionariosPage> {
         backgroundColor: cambio == false ? Colors.grey : Colors.teal,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      appBar: AdvancedAppBar(datos: datos[0], acciones: [
+      appBar: AdvancedAppBar(acciones: [
         IconButton(
             onPressed: () {
               if (cambio) {
@@ -57,7 +57,7 @@ class _PermisionariosPageState extends State<PermisionariosPage> {
             },
             icon: Icon(Icons.send))
       ]),
-      drawer: MainDrawer(datos: datos),
+      drawer: MainDrawer(),
       body: AbsorbPointer(
         absorbing: _loading,
         child: SingleChildScrollView(

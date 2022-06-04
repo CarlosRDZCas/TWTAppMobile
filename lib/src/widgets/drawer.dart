@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:two_way_transfer/args/page_args.dart';
 
+import '../prividers/providers.dart';
+
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({Key? key, required this.datos}) : super(key: key);
-  final List<String> datos;
+  const MainDrawer({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return _getDrawer(context);
   }
 
   Widget _getDrawer(BuildContext context) {
+    final loglogged = Provider.of<LogLoggedProvider>(context);
     return Drawer(
       child: Material(
         child: ListView(
@@ -25,7 +31,7 @@ class MainDrawer extends StatelessWidget {
                 "Bienvenido!",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              accountEmail: Text(datos[0]),
+              accountEmail: Text(loglogged.log.toString()),
               currentAccountPicture: Transform.translate(
                 offset: Offset(-12, -42),
                 child: Image.asset("assets/images/twt.png"),
@@ -74,24 +80,20 @@ class MainDrawer extends StatelessWidget {
     Navigator.pop(context);
     switch (index) {
       case 0:
-        Navigator.pushReplacementNamed(context, "home",
-            arguments: ScreenArguments(datos[0], datos[1]));
+        Navigator.pushReplacementNamed(context, "home");
         break;
       case 1:
-        Navigator.pushReplacementNamed(context, 'enviarcartaporte',
-            arguments: ScreenArguments(datos[0], datos[1]));
+        Navigator.pushReplacementNamed(context, 'enviarcartaporte');
         break;
       case 2:
-        Navigator.pushReplacementNamed(context, 'miscartasporte',
-            arguments: ScreenArguments(datos[0], datos[1]));
+        Navigator.pushReplacementNamed(context, 'miscartasporte');
         break;
       case 3:
         Navigator.pushNamedAndRemoveUntil(
             context, "/", (route) => route == null);
         break;
       case 4:
-        Navigator.pushReplacementNamed(context, 'permisionarios',
-            arguments: ScreenArguments(datos[0], datos[1]));
+        Navigator.pushReplacementNamed(context, 'permisionarios');
     }
   }
 }
