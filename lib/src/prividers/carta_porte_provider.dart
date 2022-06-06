@@ -61,6 +61,7 @@ class CartaPorteProvider extends ChangeNotifier {
       String newPath = path.join(dir, nombreimg);
       imagePath = await File(image.path).copy(newPath);
     }
+    notifyListeners();
   }
 
   Future getLocation(BuildContext context, Log? log) async {
@@ -110,6 +111,7 @@ class CartaPorteProvider extends ChangeNotifier {
 
       ShowSnackBar(context, 'Debe tener una remision y foto!', 5, Colors.red);
     }
+    notifyListeners();
   }
 
   Future sendPDFFTP(BuildContext context, Log log) async {
@@ -133,6 +135,7 @@ class CartaPorteProvider extends ChangeNotifier {
     }
 
     await _uploadStepByStep();
+    notifyListeners();
   }
 
   imageToPDF() async {
@@ -161,6 +164,7 @@ class CartaPorteProvider extends ChangeNotifier {
       final dir = await getExternalStorageDirectory();
       final file = File('${dir!.path}/$name');
       await file.writeAsBytes(await pdf.save());
+      notifyListeners();
       return file;
     } catch (e) {
       throw Exception('Error');

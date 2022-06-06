@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AdvancedAppBar extends StatefulWidget implements PreferredSizeWidget {
-  AdvancedAppBar({Key? key, required this.datos, required this.acciones})
-      : super(key: key);
-  final String datos;
+  AdvancedAppBar({Key? key, required this.acciones}) : super(key: key);
+
   List<Widget>? acciones = <Widget>[];
-  
+
   @override
   _AdvancedAppBarState createState() => _AdvancedAppBarState();
 

@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:provider/provider.dart';
 
 import 'package:two_way_transfer/args/args_pdf.dart';
+import 'package:two_way_transfer/src/prividers/providers.dart';
 
 class PDFViewPage extends StatefulWidget {
   @override
@@ -24,9 +26,9 @@ class _PDFViewPageState extends State<PDFViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as PdfArguments;
-    nombre = args.nombre;
-    path = args.path;
+    final PDFProvider pdfProvider = Provider.of<PDFProvider>(context);
+    nombre = pdfProvider.nombre;
+    path = pdfProvider.path;
 
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

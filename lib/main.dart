@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:provider/provider.dart';
+import 'package:two_way_transfer/src/prividers/mis_cartas_porte_provider.dart';
 import 'package:two_way_transfer/src/prividers/providers.dart';
 import 'package:two_way_transfer/src/routes/routes.dart';
 
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => CartaPorteProvider()),
+        ChangeNotifierProvider(create: (_) => MisCartasPorteProvider()),
+        ChangeNotifierProvider(create: (_) => PermisionariosProvider()),
+        ChangeNotifierProvider(create: (_) => PDFProvider()),
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => LogLoggedProvider())
       ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:two_way_transfer/args/page_args.dart';
-import 'package:two_way_transfer/src/components/appbar.dart';
-import 'package:two_way_transfer/src/components/drawer.dart';
+import 'package:two_way_transfer/src/widgets/appbar.dart';
+import 'package:two_way_transfer/src/widgets/drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,12 +18,9 @@ class _HomePageState extends State<HomePage> {
     datos.add(args.remision);
     return Scaffold(
       appBar: AdvancedAppBar(
-        datos: datos[0],
         acciones: null,
       ),
-      drawer: MainDrawer(
-        datos: datos,
-      ),
+      drawer: MainDrawer(),
       body: Center(child: Text("Home")),
     );
   }

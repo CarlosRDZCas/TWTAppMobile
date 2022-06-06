@@ -31,7 +31,7 @@ class MainDrawer extends StatelessWidget {
                 "Bienvenido!",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              accountEmail: Text(loglogged.log.toString()),
+              accountEmail: Text(loglogged.log!.log.toString()),
               currentAccountPicture: Transform.translate(
                 offset: Offset(-12, -42),
                 child: Image.asset("assets/images/twt.png"),
