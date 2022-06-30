@@ -57,12 +57,13 @@ class PermisionariosProvider extends ChangeNotifier {
       images.add(imagePath);
       notifyListeners();
     }
+    return null;
   }
 
   void enviarPDFImagenes(BuildContext context) async {
     if (images.length > 0) {
       await imageToPDF();
-      final file = await savePDF();
+      await savePDF();
       notifyListeners();
       sendPDFFTP(context);
     } else {
@@ -108,7 +109,7 @@ class PermisionariosProvider extends ChangeNotifier {
     loading = true;
 
     final response = await http
-        .get(Uri.parse('http://192.168.1.161:8085/api/Log?log=${log}'));
+        .get(Uri.parse('http://192.168.1.161:8085/api/Log?log=$log'));
     notifyListeners();
     if (response.body.length > 2) {
       final jsonresp = json.decode(response.body);

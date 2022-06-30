@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:two_way_transfer/src/components/snackbar.dart';
-import 'package:two_way_transfer/src/models/models.dart';
 import 'package:two_way_transfer/src/prividers/providers.dart';
 
 class FormCard extends StatelessWidget {
@@ -19,7 +18,7 @@ class FormCard extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       key: loginProvider.frmKey,
       child: SingleChildScrollView(
-        child: Card(
+          child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           margin: EdgeInsets.only(left: 20, right: 30, top: 0),

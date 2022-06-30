@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:provider/provider.dart';
 
-import 'package:two_way_transfer/args/args_pdf.dart';
 import 'package:two_way_transfer/src/prividers/providers.dart';
 
 class PDFViewPage extends StatefulWidget {

@@ -1,14 +1,6 @@
-import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
 
-import 'package:ftpconnect/ftpconnect.dart';
 import 'package:provider/provider.dart';
-import 'package:two_way_transfer/args/args_pdf.dart';
-
-import 'package:open_file/open_file.dart';
-
-import 'package:path_provider/path_provider.dart';
 
 import '../prividers/providers.dart';
 import '../widgets/widgets.dart';

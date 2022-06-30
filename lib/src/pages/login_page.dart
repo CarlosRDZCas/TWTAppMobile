@@ -1,4 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,8 +14,10 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           LoginBG(),
-          Center(
-            child: FormCard(loginProvider: loginProvider),
+          BounceInLeft (
+            child: Center(
+              child: FormCard(loginProvider: loginProvider),
+            ),
           ),
         ],
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:provider/provider.dart';
-import 'package:two_way_transfer/src/prividers/mis_cartas_porte_provider.dart';
+
 import 'package:two_way_transfer/src/prividers/providers.dart';
 import 'package:two_way_transfer/src/routes/routes.dart';
 

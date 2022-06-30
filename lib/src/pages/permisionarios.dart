@@ -1,5 +1,3 @@
-import 'package:ftpconnect/ftpconnect.dart';
-
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -62,6 +60,7 @@ class PermisionariosPage extends StatelessWidget {
                               return 'Ingrese un valor';
                             if (value.contains(RegExp(r"[A-Z,a-z]")))
                               return 'No ingrese letras';
+                            return null;
                           },
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
